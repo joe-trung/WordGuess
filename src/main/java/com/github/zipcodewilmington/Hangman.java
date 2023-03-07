@@ -1,10 +1,13 @@
 package com.github.zipcodewilmington;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Collection;
+
+import static jdk.internal.foreign.abi.aarch64.CallArranger.C;
 
 /**
  * @author xt0fer
@@ -13,8 +16,16 @@ import java.util.Collection;
  */
 public class Hangman {
     public static void main(String[] args) {
-
+        System.out.println("GUESSING GAME. WORDLE ZIPCODE VERSION");
+        Scanner scanner = new Scanner(new File());
+        List<String> wordList = new ArrayList<>();
+        while (scanner.hasNext()) {
+            wordList.add(scanner.nextLine());
+            System.out.println(scanner.nextLine());
+        }
     }
+
+
 
     public static String[] wordList() {
         String [] wordList = {"cowboy", "problem", "love", "console","blood", "money","school","sample","license","zipcode"};
