@@ -18,13 +18,13 @@ public class Hangman {
         String[] currentGuessArray = new String[numberOfGuesses];
         for (int i=1;i<=numberOfGuesses;i++) {
             String guessedChar = getGuessCharacter();
-            String[] matchArray = guessLocation(guessedChar, randomWord);
+//            String[] matchArray = guessLocation(guessedChar, randomWord);
             if (guessedChar.equals(randomWord.split("")[i])) {
                 currentGuessArray[i] = guessedChar;
             } else {
-                currentGuessArray[i] = "_"
+                currentGuessArray[i] = "_";
             }
-
+            System.out.println("Current Guess:"+currentGuessArray);
         }
 
 
