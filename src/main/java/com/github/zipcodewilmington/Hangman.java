@@ -1,9 +1,10 @@
 package com.github.zipcodewilmington;
 
 
-import java.lang.reflect.Array;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Collection;
 
 /**
  * @author xt0fer
@@ -21,30 +22,30 @@ public class Hangman {
     }
 
     public static String getRandomWord(String[] wordlist){
-        Random i = Random
-
+        int i = (int) Math.floor(Math.random()*12+1);
+        return wordlist[i];
     }
     public static int getNumberOfTries(String guessingWord) {
         int numberOfTries = guessingWord.length();
         return numberOfTries;
     }
 
-    public static boolean compareGuess(char guessedChar, String guessingWord) {
-        boolean guess = false;
+    public static String[] guessLocation(String guessedChar, String guessingWord) {
+        String location = "";
         String[] temp = guessingWord.split("");
         for (int i =0; i<temp.length;i++) {
-            if (temp[i] == guessedChar) {
-                guess = true;
-
+            if (guessedChar == temp[i]) {
+                location = location + i;
             }
-            System.out.println("Hoorey! your letter is in the word");
         }
-        return guess;
+        return location.split("");
     }
 
-    public static char getGuessCharacter() {
+    public static String getGuessCharacter() {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your guessed letter:");
+        String guessChar = in.nextLine();
+        return guessChar;
     }
 
 
