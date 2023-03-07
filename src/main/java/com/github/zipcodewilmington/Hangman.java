@@ -12,20 +12,31 @@ public class Hangman {
     public static void main(String[] args) {
         String randomWord = getRandomWord(wordList());
         int numberOfGuesses = getNumberOfTries(randomWord);
-        String[] currentGuessArray = new String[numberOfGuesses];
-        for (int i=1;i<=numberOfGuesses;i++) {
+        String[] updatedGuessArray = getBlankString(randomWord, numberOfGuesses);
+
+        for (int i=0; i<numberOfGuesses;i++) {
+            System.out.println("You have "+(numberOfGuesses-i)+" letter guesses remain");
             String guessedChar = getGuessCharacter();
-//            String[] matchArray = guessLocation(guessedChar, randomWord);
-            if (guessedChar.equals(randomWord.split("")[i])) {
-                currentGuessArray[i] = guessedChar;
-            } else {
-                currentGuessArray[i] = "_";
+            for (int k=0; k<numberOfGuesses;k++) {
+                if (guessedChar.equals(randomWord.split("")[k])) {
+                    updatedGuessArray[k] = guessedChar;
+                }
             }
-            System.out.println("Current Guess:"+ Arrays.toString(currentGuessArray));
+            System.out.println("Current Guess:"+ Arrays.toString(updatedGuessArray));
         }
+        System.out.println("NOW GUESS THE WORD. ONLY ONE CHANCE \n\n");
 
 
 
+    }
+
+    private static String[] getBlankString(String randomWord, int numberOfGuesses) {
+        String[] updatedGuessArray = new String[numberOfGuesses];
+        System.out.println("Word to be guessed: "+randomWord);
+        for (int j=0;j<numberOfGuesses;j++) {
+            updatedGuessArray[j] = "-";
+        }
+        return updatedGuessArray;
     }
 
     public static String[] wordList() {
