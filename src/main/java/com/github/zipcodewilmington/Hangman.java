@@ -70,16 +70,17 @@ public class Hangman {
         return numberOfTries;
     }
 
-    public static String[] guessLocation(String guessedChar, String guessingWord) {
-        String location = "";
-        String[] temp = guessingWord.split("");
-        for (int i =0; i<temp.length;i++) {
-            if (guessedChar == temp[i]) {
-                location = location + i;
-            }
-        }
-        return location.split("");
-    }
+// NOT USED
+//    public static String[] guessLocation(String guessedChar, String guessingWord) {
+//        String location = "";
+//        String[] temp = guessingWord.split("");
+//        for (int i =0; i<temp.length;i++) {
+//            if (guessedChar == temp[i]) {
+//                location = location + i;
+//            }
+//        }
+//        return location.split("");
+//    }
 
     public static String getGuessCharacter() {
         Scanner in = new Scanner(System.in);
