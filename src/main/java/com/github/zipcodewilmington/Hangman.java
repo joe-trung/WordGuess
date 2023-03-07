@@ -9,7 +9,12 @@ import java.util.*;
  * @date 5/27/21 11:02 AM
  */
 public class Hangman {
+
+
     public static void main(String[] args) {
+        main1();
+    }
+    public static void main1() {
         String randomWord = getRandomWord(wordList());
         int numberOfGuesses = getNumberOfTries(randomWord);
         String[] updatedGuessArray = getBlankString(randomWord, numberOfGuesses);
@@ -32,10 +37,14 @@ public class Hangman {
         } else {
             System.out.println("OOPS! BETTER LUCK NEXT TIME");
         }
+        doAgain();
     }
 
-    public static boolean doAgain() {
-
+    public static void doAgain() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nDo you want to play again? (y or n)");
+        String response = scanner.nextLine();
+        if (response.equals("y")) main1();
     }
 
     private static String[] getBlankString(String randomWord, int numberOfGuesses) {
