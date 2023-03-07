@@ -1,0 +1,10 @@
+clock
+monitor
+canvas
+tablet
+door
+laptop
+blanket
+window
+trash
+printer
