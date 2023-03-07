@@ -15,10 +15,15 @@ public class Hangman {
     public static void main(String[] args) {
         String randomWord = getRandomWord(wordList());
         int numberOfGuesses = getNumberOfTries(randomWord);
+        String[] currentGuessArray = new String[numberOfGuesses];
         for (int i=1;i<=numberOfGuesses;i++) {
             String guessedChar = getGuessCharacter();
             String[] matchArray = guessLocation(guessedChar, randomWord);
-
+            if (guessedChar.equals(randomWord.split("")[i])) {
+                currentGuessArray[i] = guessedChar;
+            } else {
+                currentGuessArray[i] = "_"
+            }
 
         }
 
