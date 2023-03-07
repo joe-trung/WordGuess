@@ -15,18 +15,26 @@ public class Hangman {
         String[] updatedGuessArray = getBlankString(randomWord, numberOfGuesses);
 
         for (int i=0; i<numberOfGuesses;i++) {
-            System.out.println("You have "+(numberOfGuesses-i)+" letter guesses remain");
+            System.out.println("\nYou have "+(numberOfGuesses-i)+" letter guesses remain \n");
             String guessedChar = getGuessCharacter();
             for (int k=0; k<numberOfGuesses;k++) {
                 if (guessedChar.equals(randomWord.split("")[k])) {
                     updatedGuessArray[k] = guessedChar;
                 }
             }
-            System.out.println("Current Guess:"+ Arrays.toString(updatedGuessArray));
+            System.out.println("\nCurrent Guess:"+ Arrays.toString(updatedGuessArray));
         }
-        System.out.println("NOW GUESS THE WORD. ONLY ONE CHANCE \n\n");
+        System.out.println("**********NOW GUESS THE WORD. ONLY ONE CHANCE********* \n");
+        Scanner scan = new Scanner(System.in);
+        String guessWord = scan.nextLine();
+        if (guessWord.equals(randomWord)) {
+            System.out.println("$$$$$$$ GREAT! YOU GOT THE WORD $$$$$$$$$");
+        } else {
+            System.out.println("OOPS! BETTER LUCK NEXT TIME");
+        }
+    }
 
-
+    public static boolean doAgain() {
 
     }
 
