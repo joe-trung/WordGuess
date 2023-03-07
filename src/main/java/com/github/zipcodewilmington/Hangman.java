@@ -1,10 +1,7 @@
 package com.github.zipcodewilmington;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Collection;
+import java.util.*;
 
 /**
  * @author xt0fer
@@ -24,7 +21,7 @@ public class Hangman {
             } else {
                 currentGuessArray[i] = "_";
             }
-            System.out.println("Current Guess:"+currentGuessArray);
+            System.out.println("Current Guess:"+ Arrays.toString(currentGuessArray));
         }
 
 
