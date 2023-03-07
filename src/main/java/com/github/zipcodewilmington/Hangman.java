@@ -13,7 +13,16 @@ import java.util.Collection;
  */
 public class Hangman {
     public static void main(String[] args) {
+        String randomWord = getRandomWord(wordList());
+        int numberOfGuesses = getNumberOfTries(randomWord);
+        for (int i = 1;i<=numberOfGuesses;i++) {
+            String guessChar = getGuessCharacter();
+            String[] locationArray = guessLocation(randomWord, guessChar);
+            for (int j = 1;i<=numberOfGuesses;j++) {
+                if (randomWord.split("")[i].equals(locationArray[j])){
+            }
 
+        }
     }
 
     public static String[] wordList() {
@@ -43,7 +52,7 @@ public class Hangman {
 
     public static String getGuessCharacter() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter your guessed letter:");
+        System.out.println("Please guess a letter in the word:");
         String guessChar = in.nextLine();
         return guessChar;
     }
