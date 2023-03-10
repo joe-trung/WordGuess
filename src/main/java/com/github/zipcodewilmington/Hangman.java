@@ -15,6 +15,7 @@ public class Hangman {
         main1();
     }
     public static void main1() {
+//        String randomWord = getWord();
         String randomWord = getRandomWord(wordList());
         int numberOfGuesses = getNumberOfTries(randomWord);
         String[] updatedGuessArray = getBlankString(randomWord, numberOfGuesses);
@@ -49,7 +50,7 @@ public class Hangman {
 
     private static String[] getBlankString(String randomWord, int numberOfGuesses) {
         String[] updatedGuessArray = new String[numberOfGuesses];
-        System.out.println("Word to be guessed: "+randomWord);
+        System.out.println("Word to be guessed: "+randomWord + "  (Pretend you didn't see it)");
         for (int j=0;j<numberOfGuesses;j++) {
             updatedGuessArray[j] = "-";
         }
@@ -62,9 +63,17 @@ public class Hangman {
     }
 
     public static String getRandomWord(String[] wordlist){
-        int i = (int) Math.floor(Math.random()*12+1);
+        int i = (int) Math.floor(Math.random()*10);
         return wordlist[i];
     }
+//
+//    public String getWord(){
+//        try {
+//            return Files.readAllLines(Paths.get("src/main/java/com/github/zipcodewilmington/words.txt"));
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
     public static int getNumberOfTries(String guessingWord) {
         int numberOfTries = guessingWord.length();
         return numberOfTries;
