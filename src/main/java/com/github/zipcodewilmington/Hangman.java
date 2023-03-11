@@ -63,13 +63,13 @@ public class Hangman {
     }
 
     public static String getRandomWord(String[] wordlist){
-        int i = (int) Math.floor(Math.random()*10);
+        int i = (int) Math.floor(Math.random()* wordlist.length);
         return wordlist[i];
     }
 //
 //    public String getWord(){
 //        try {
-//            return Files.readAllLines(Paths.get("src/main/java/com/github/zipcodewilmington/words.txt"));
+//            return Files.readAllLines(Paths.get("words.txt"));
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
